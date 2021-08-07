@@ -16,26 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-wi-fd0">
+                                <rect key="frame" x="164.5" y="418" width="85.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="92Q-SQ-9As">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QV-2q-yNR">
+                                <rect key="frame" x="191.5" y="526" width="31" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-dy-gDu">
+                                <rect key="frame" x="222.5" y="504.5" width="14.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="92Q-SQ-9As" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K91-Uv-IU9"/>
-                            <constraint firstItem="92Q-SQ-9As" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LTe-to-xKn"/>
-                            <constraint firstItem="92Q-SQ-9As" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mWQ-Z6-AId"/>
+                            <constraint firstItem="F8i-dy-gDu" firstAttribute="bottom" secondItem="9QV-2q-yNR" secondAttribute="top" constant="10" id="0kA-bo-Hct"/>
+                            <constraint firstItem="9Kg-wi-fd0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1fS-re-sy6"/>
+                            <constraint firstItem="F8i-dy-gDu" firstAttribute="leading" secondItem="9QV-2q-yNR" secondAttribute="trailing" id="4rq-QJ-I4w"/>
+                            <constraint firstItem="9Kg-wi-fd0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Wa-Ao-Det"/>
+                            <constraint firstItem="92Q-SQ-9As" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lxa-c5-fxm"/>
+                            <constraint firstItem="92Q-SQ-9As" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YQN-2g-pYy"/>
+                            <constraint firstItem="9QV-2q-yNR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pBn-et-bU1"/>
+                            <constraint firstItem="92Q-SQ-9As" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tmh-Ys-D46"/>
+                            <constraint firstItem="9QV-2q-yNR" firstAttribute="top" secondItem="9Kg-wi-fd0" secondAttribute="bottom" constant="48" id="uJO-mz-G90"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="9Kg-wi-fd0" id="rHo-pj-zKD"/>
                         <outlet property="searchBar" destination="92Q-SQ-9As" id="TRD-f7-QFx"/>
+                        <outlet property="temperatureLabel" destination="9QV-2q-yNR" id="5m2-ei-VQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="78"/>
+            <point key="canvasLocation" x="34.782608695652179" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
