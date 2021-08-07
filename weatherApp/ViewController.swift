@@ -10,10 +10,12 @@ import UIKit
 struct weatherInfo{
     var locationName:String?
     var temp_c:Double?
+    var iconUrl:[String]?
 }
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -51,6 +53,7 @@ extension ViewController: UISearchBarDelegate{
                 }
                 if let current = json["current"]{
                     info.temp_c = current["temperature"] as? Double
+                    info.iconUrl = current["weather_icons"] as! [String]?
                 }
                 
                 
@@ -62,6 +65,12 @@ extension ViewController: UISearchBarDelegate{
                     DispatchQueue.main.async {
                         self?.cityLabel.text = info.locationName!
                         self?.temperatureLabel.text = "\(info.temp_c!)"
+                        
+                        if info.iconUrl != nil {
+                            if !info.iconUrl!.isEmpty{
+                                self?.loadIcon(strUrl: info.iconUrl![0])
+                            }
+                        }
                     }
                     
                 }
@@ -74,5 +83,25 @@ extension ViewController: UISearchBarDelegate{
         
         task.resume()
         
+    }
+    
+    func loadIcon(strUrl:String) {
+       print("try load icon=\(strUrl)")
+        
+        guard let url = URL(string: strUrl) else {
+            print("wrong url")
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.weatherIcon.image = image
+                        }
+                }
+            }
+
+        }
     }
 }
