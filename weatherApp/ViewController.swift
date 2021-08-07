@@ -28,7 +28,8 @@ class ViewController: UIViewController {
 extension ViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        guard let searchPlace = searchBar.text else{
+        searchBar.resignFirstResponder()
+        guard let searchPlace = searchBar.text?.replacingOccurrences(of: " ", with: "%20") else{
             print("empty text")
             return
         }
